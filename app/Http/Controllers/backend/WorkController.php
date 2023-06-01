@@ -7,6 +7,10 @@ use Illuminate\Http\Request;
 use App\Models\Work;
 class WorkController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
          //index Method__//
          public function index(){
             $data = Work::all();

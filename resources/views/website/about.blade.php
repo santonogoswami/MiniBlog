@@ -1,18 +1,18 @@
 @extends('layouts.website')
 @section('content')
     <div class="site-cover site-cover-sm same-height overlay single-page" style="background-image: url('{{ asset('website') }}/images/img_4.jpg');">
-        @foreach ($data as $d )
+    
         <div class="container">
         <div class="row same-height justify-content-center">
             <div class="col-md-12 col-lg-10">
             <div class="post-entry text-center">
                 <h1 class="">About Us</h1>
-                <p class="lead mb-4 text-white">{{$d->aboutus_description}}</p>
+                <p class="lead mb-4 text-white"></p>
             </div>
             </div>
         </div>
         </div>
-        @endforeach
+        
     </div>
 
     <div class="site-section bg-light">

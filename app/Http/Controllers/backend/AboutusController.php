@@ -8,6 +8,11 @@ use App\Models\aboutus;
 class AboutusController extends Controller
 {
 
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
       //index Method__//
       public function index(){
         $data = aboutus::all();

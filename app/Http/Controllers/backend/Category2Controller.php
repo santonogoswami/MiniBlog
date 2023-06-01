@@ -7,6 +7,11 @@ use Illuminate\Http\Request;
 use App\Models\category2;
 class Category2Controller extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
       //index Method__//
       public function index(){
         $data = category2::all();

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\work;
+use App\Models\About;
 
 use DB;
 class HomeController extends Controller
@@ -26,10 +27,20 @@ class HomeController extends Controller
     public function index()
     {
         $data = work::all();
+        // $abouts = aboutus::first();
         
                 // DB::table('works')->get();
-        // dd($data);
+        // dd($abouts);
         return view('website.index',compact('data'));
         
+    }
+    
+    public function category()
+    {
+       return view('website.category');
+    }
+    public function about()
+    {
+       return view('website.about');
     }
 }

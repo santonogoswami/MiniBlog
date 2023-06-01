@@ -51,7 +51,7 @@
             <nav class="site-navigation" role="navigation">
               <ul class="site-menu js-clone-nav mr-auto d-none d-lg-block mb-0">
                 <li><a href="category.html">Home</a></li>
-                <li><a href="/about">About</a></li>
+                <li><a href="website/about">About</a></li>
                 <li><a href="/category">Category</a></li>
                 <li><a href="category.html">Work</a></li>
                 <li><a href="category.html">Price</a></li>
@@ -69,13 +69,22 @@
 
 
 
+@php 
+
+$abouts = App\Models\aboutus::first();
+
+@endphp
+
     <div class="site-footer">
       <div class="container">
         <div class="row mb-5">
+          
           <div class="col-md-4">
             <h3 class="footer-heading mb-4">About Us</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat reprehenderit magnam deleniti quasi saepe, consequatur atque sequi delectus dolore veritatis obcaecati quae, repellat eveniet omnis, voluptatem in. Soluta, eligendi, architecto.</p>
+            <p>{{$abouts->aboutus_description}}</p>
           </div>
+          
+          
           <div class="col-md-3 ml-auto">
             <!-- <h3 class="footer-heading mb-4">Navigation</h3> -->
             <ul class="list-unstyled float-left mr-5">

@@ -9,40 +9,12 @@
 
 @section('admin-content')
 
-<!-- 
-<!DOCTYPE html>
-<html>
-<head>
-
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-<style>
-table {
-  font-family: arial, sans-serif;
-  border-collapse: collapse;
-  width: 100%;
-}
-
-td, th {
-  border: 1px solid #dddddd;
-  text-align: left;
-  padding: 8px;
-}
-
-tr:nth-child(even) {
-  background-color: #dddddd;
-}
-</style>
-</head>
-<body> -->
-
-    <div class="container">
 
 
- <a href="{{url('auth/modules/About/create')}}"> Add About</a>
+  <div class="container mt-6">
+
+
+ <a href="{{url('auth/modules/About/create')}}" class="btn btn-primary"> Add About</a>
  <br>
  <table class="table table-responsive">
    <thead>
