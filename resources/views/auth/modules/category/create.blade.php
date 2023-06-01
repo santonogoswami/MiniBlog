@@ -15,12 +15,6 @@
         <form action="{{url('auth/modules/category/store')}}" method="post" enctype="multipart/form-data">
             @csrf
 
-            <div class="form-group">
-                <label for="name">name</label>
-                <input type="text" class="form-control" id="name" placeholder="name" name="name">
-                @if ($errors->has('name'))
-                <span class="error">{{ $errors->first('name') }}</span>
-            @endif
 
 
               <div class="form-group">

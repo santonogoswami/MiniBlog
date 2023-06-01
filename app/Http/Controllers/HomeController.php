@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\work;
+
+use DB;
 class HomeController extends Controller
 {
     /**
@@ -24,6 +26,8 @@ class HomeController extends Controller
     public function index()
     {
         $data = work::all();
+        
+                // DB::table('works')->get();
         // dd($data);
         return view('website.index',compact('data'));
         

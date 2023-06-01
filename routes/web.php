@@ -7,6 +7,7 @@ use App\Http\Controllers\backend\Category2Controller;
 use App\Http\Controllers\backend\AboutController;
 use App\Http\Controllers\backend\WorkController;
 use App\Http\Controllers\backend\PriceController;
+use App\Http\Controllers\backend\AboutusController;
 use App\Http\Controllers\HomeController;
 Auth::routes();
 
@@ -74,3 +75,10 @@ Route::post('auth/modules/Price/store', [PriceController::class,'store'])->name(
 Route::get('auth/modules/Price/edit/{id}', [PriceController::class,'edit'])->name('auth.modules.Price.edit');
 Route::post('auth/modules/Price/update/{id}', [PriceController::class,'update'])->name('auth.modules.Price.update');
 Route::get('auth/modules/Price/delete/{id}', [PriceController::class,'destroy'])->name('auth.modules.Price.delete');
+
+Route::get('auth/modules/about_us/index', [AboutusController::class,'index'])->name('auth.modules.about_us.index');
+Route::get('auth/modules/about_us/create', [AboutusController::class,'create'])->name('auth.modules.about_us.create');
+Route::post('auth/modules/about_us/store', [AboutusController::class,'store'])->name('auth.modules.about_us.store');
+Route::get('auth/modules/about_us/edit/{id}', [AboutusController::class,'edit'])->name('auth.modules.about_us.edit');
+Route::post('auth/modules/about_us/update/{id}', [AboutusController::class,'update'])->name('auth.modules.about_us.update');
+Route::get('auth/modules/about_us/delete/{id}', [AboutusController::class,'destroy'])->name('auth.modules.about_us.delete');
