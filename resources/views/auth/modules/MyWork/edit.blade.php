@@ -1,11 +1,20 @@
-<!DOCTYPE html>
-<html>
-<body>
-    <div class="container">
-        <h2>Vertical (basic) form</h2>
-        <form action="{{route('auth.modules.MyWork.update', $data->id)}}" method="post" enctype="multipart/form-data">
-            @csrf
 
+@extends('layouts.master')
+
+@section('admin-title')
+	Home - page 
+@endsection
+
+@section('admin-content')
+<div class="container mt-6">    
+            <div class="card card-primary">
+             
+              <!-- /.card-header -->
+              <!-- form start -->
+              <form action="{{route('auth.modules.MyWork.update', $data->id)}}" method="post" enctype="multipart/form-data">
+                @csrf
+                <div class="card-body">
+                  <div class="form-group">
               <div class="form-group">
                 <label for="before_image">before_image</label>
                 <input type="file" class="form-control" id="before_image" value="{{$data->before_image}}"placeholder="before_image" name="before_image">
@@ -34,8 +43,12 @@
             <span class="error">{{ $errors->first('image_description') }}</span>
         @endif
           </div>
-          <button type="submit" class="btn btn-success">Submit</button>
-        </form>
-      </div>
-</body>
-</html>
+        </div>
+        <!-- /.card-body -->
+    
+        <div class="card-footer">
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+      </form>
+    </div>
+@endsection

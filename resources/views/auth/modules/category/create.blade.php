@@ -1,20 +1,30 @@
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <title>Bootstrap Example</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-</head>
-<body>
-    <div class="container">
-        <h2>Vertical (basic) form</h2>
-        <form action="{{url('auth/modules/category/store')}}" method="post" enctype="multipart/form-data">
-            @csrf
+@extends('layouts.master')
 
+@section('admin-title')
+	Home - page 
+@endsection
+
+@section('admin-content')
+<div class="container mt-6">
+       
+       
+            <div class="card card-primary">
+             
+              <!-- /.card-header -->
+              <!-- form start -->
+              <form action="{{url('auth/modules/category/store')}}" method="post" enctype="multipart/form-data">
+                @csrf
+                <div class="card-body">
+                  <div class="form-group">
+
+            <div class="form-group">
+              <label for="name">name</label>
+              <input type="text" class="form-control" id="name" placeholder="name" name="name">
+              @if ($errors->has('name'))
+              <span class="error">{{ $errors->first('name') }}</span>
+          @endif
+            </div>
 
 
               <div class="form-group">
@@ -39,12 +49,15 @@
                 @if ($errors->has('status'))
                 <span class="error">{{ $errors->first('status') }}</span>
             @endif
+              </div> 
+            </div>
+              <!-- /.card-body -->
+          
+              <div class="card-footer">
+                <button type="submit" class="btn btn-primary">Submit</button>
               </div>
-
-
-
-              <button type="submit" class="btn btn-success">Submit</button>
-        </form>
-      </div>
-</body>
-</html>
+            </form>
+          </div>
+      @endsection
+      
+      

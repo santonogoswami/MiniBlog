@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\work;
 use App\Models\About;
+use App\Models\category2;
 
 use DB;
 class HomeController extends Controller
@@ -27,6 +28,7 @@ class HomeController extends Controller
     public function index()
     {
         $data = work::all();
+       
         // $abouts = aboutus::first();
         
                 // DB::table('works')->get();
@@ -37,7 +39,8 @@ class HomeController extends Controller
     
     public function category()
     {
-       return view('website.category');
+        $ctg = category2::all();
+       return view('website.category',compact('ctg'));
     }
     public function about()
     {

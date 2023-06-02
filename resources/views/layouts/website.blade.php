@@ -50,7 +50,7 @@
           <div class="col-8 text-right">
             <nav class="site-navigation" role="navigation">
               <ul class="site-menu js-clone-nav mr-auto d-none d-lg-block mb-0">
-                <li><a href="category.html">Home</a></li>
+                <li><a href="/">Home</a></li>
                 <li><a href="website/about">About</a></li>
                 <li><a href="/category">Category</a></li>
                 <li><a href="category.html">Work</a></li>

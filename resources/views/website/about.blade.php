@@ -2,12 +2,17 @@
 @section('content')
     <div class="site-cover site-cover-sm same-height overlay single-page" style="background-image: url('{{ asset('website') }}/images/img_4.jpg');">
     
+@php 
+
+$abouts = App\Models\aboutus::first();
+
+@endphp
         <div class="container">
         <div class="row same-height justify-content-center">
             <div class="col-md-12 col-lg-10">
             <div class="post-entry text-center">
                 <h1 class="">About Us</h1>
-                <p class="lead mb-4 text-white"></p>
+                <p class="lead mb-4 text-white">{{$abouts->aboutus_description}}</p>
             </div>
             </div>
         </div>

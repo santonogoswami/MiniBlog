@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="{{asset('admin/dist/css/adminlte.min.css')}}">
+  <link rel="stylesheet" href="{{asset('admin/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css') }}">
 </head>
 <!--
 `body` tag options:
@@ -234,6 +235,18 @@
             </a>
           </li>
           <li class="nav-item">
+            <a class="btn btn-info btn-lg" href="{{ route('logout') }}"
+            onclick="event.preventDefault();
+                          document.getElementById('logout-form').submit();">
+                              <p style="text-align: center"> Log out </p>
+         </a>
+
+         <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+             @csrf
+         </form>
+
+          </li>
+          <li class="nav-item">
             <a href="pages/widgets.html" class="nav-link">
               <i class="nav-icon fas fa-th"></i>
               <p>
@@ -376,12 +389,34 @@
 <script src="{{asset('admin/plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
 <!-- AdminLTE -->
 <script src="{{asset('admin/dist/js/adminlte.js')}}"></script>
-
+<script src="{{asset ('admin/plugins/datatables/jquery.dataTables.min.js') }}"></script>
+<script src="{{asset ('admin/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js') }}"></script>
+<script src="{{asset ('admin/plugins/datatables-responsive/js/dataTables.responsive.min.js') }}"></script>
+<script src="{{asset ('admin/plugins/datatables-responsive/js/responsive.bootstrap4.min.js') }}"></script>
+<script src="{{asset ('admin/plugins/datatables-buttons/js/dataTables.buttons.min.js') }}"></script>
 <!-- OPTIONAL SCRIPTS -->
 <script src="{{asset('admin/plugins/chart.js/Chart.min.js')}}"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="{{asset('admin/dist/js/demo.js')}}"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="{{asset('admin/dist/js/pages/dashboard3.js')}}"></script>
+
+<script>
+  $(function () {
+    $("#example1").DataTable({
+      "responsive": true, "lengthChange": false, "autoWidth": false,
+      "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+    }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+    $('#example2').DataTable({
+      "paging": true,
+      "lengthChange": false,
+      "searching": false,
+      "ordering": true,
+      "info": true,
+      "autoWidth": false,
+      "responsive": true,
+    });
+  });
+</script>
 </body>
 </html>
